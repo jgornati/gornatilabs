@@ -10,18 +10,6 @@ $(document).ready(function() {
         event.preventDefault();
     });
 
-    // Prettyphoto
-    $("a[class^='prettyPhoto']").prettyPhoto({
-        theme: 'pp_default'
-    });
-
-    // Featured Slider
-    $("#featured-works").owlCarousel({
-        navigation: false,
-        slideSpeed: 300,
-        pagination: true,
-        singleItem: true
-    });
 
     // Menu Click Close
     $('.sidebar-nav li a').on("click", function() {
@@ -116,37 +104,4 @@ $(document).ready(function() {
         }
     });
 
-});
-
-// Isotope
-$(window).load(function() {
-    "use strict";
-    var $container = $('#folio');
-    $container.isotope({
-        itemSelector: '.folio-item',
-        transitionDuration: '0.6s'
-    });
-    var $optionSets = $('.folio-filter'),
-        $optionLinks = $optionSets.find('a');
-    $optionLinks.click(function() {
-        var $this = $(this);
-        if ($this.hasClass('selected')) {
-            return false;
-        }
-        var $optionSet = $this.parents('.folio-filter');
-        $optionSet.find('.selected').removeClass('selected');
-        $this.addClass('selected');
-        // make option object dynamically, i.e. { filter: '.my-filter-class' }
-        var options = {},
-            key = $optionSet.attr('data-option-key'),
-            value = $this.attr('data-option-value');
-        value = value === 'false' ? false : value;
-        options[key] = value;
-        if (key === 'layoutMode' && typeof changeLayoutMode === 'function') {
-            changeLayoutMode($this, options);
-        } else {
-            $container.isotope(options);
-        }
-        return false;
-    });
 });
