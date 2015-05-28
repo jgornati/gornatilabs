@@ -8,8 +8,7 @@ $(function() {
     accessToken: '227005388.467ede5.c510de6187524c89abdcc2f0cd25359e',
     limit: 10,
     sortBy: 'none',
-    resolution: 'standard_resolution',
-    template: '<div class="folio-item isotope-item web packaging"><a href="{{link}}" target="_blank" class="prettyPhoto"><div class="folio-thumb"><img src="{{image}}" class="img-responsive" alt="" /></div></a><div class="folio-overlay"><h4><a href="#" class="fa fa-comment-o"> {{comments}}</a></h4></div><i class="fa fa-heart-o" style="font-size: 14px;"> {{likes}}</i></div>',
+    template: '<a href="{{link}}" target="_blank"><img src="{{image}}" /><div class="likes">&hearts; {{likes}}</div></a>',
     after: function() {
       if (!this.hasNext()) {
         loadButton.setAttribute('disabled', 'disabled');
@@ -17,7 +16,7 @@ $(function() {
     }
   });
 
-  $('#btnMas').on('click', function(){
+  $('#btnMas').on('click', function() {
     feed.next();
   });
 

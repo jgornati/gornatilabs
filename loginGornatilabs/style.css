@@ -1,0 +1,8 @@
+body {
+  background: url(./img/circuito.jpg);
+  background-color: #444;
+  background: url(), url(), url(./img/circuito.jpg);
+}
+.vertical-offset-100 {
+  padding-top: 100px;
+}
